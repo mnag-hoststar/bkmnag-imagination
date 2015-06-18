@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="row container">
+    <div class="three col">
+        <header class="bk-header">
+            <div class="contain">
+                <div class="companyheader">
+                    {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
+                    {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+                </div>
+            </div>
+            {% if pages|length > 1 %}
+                {{widget('extendednavigation', 'navigationheader', {})|raw}}
+            {% endif %}
+            {{widget('profile', 'headericons', { 'profileType': 'socialicons' })|raw}}
+            <div class="contain sticktobottom">
+                {{widget('content', 'contentfooter', {content: 'This is a content widget.', lines: 'all'})|raw}}
+                {{widget('button', 'feature-button', {text:'GET IN TOUCH' })|raw}}
+                <h5>{{widget('profile', 'copyright', { 'profileType': 'copyright' })|raw}}</h5>
+            </div>
+        </header>
+    </div>
+    <div class="nine col">
+        <div role ="main">
+            {{zone('main')|raw}}
+        </div>     
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{
+    "name":"Imagination",
+    "thumbnail":"imagination.png",
+    "templateType":"standard",
+    "images":["/images/feature-bg.jpg"],
+    "pageTypes":["home"],
+    "tags": {
+    "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
+    "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
+    "br": ["minimalista", "limpo", "fotografia", "vintage", "moderno", "escuro", "estúdio", "website", "criativo", "elegante", "profissional", "único", "mídia", "sans-serif"]
+    },
+    "colorSwatches":
+    {
+        "Swatch 1": {
+            "color1":"#000000",
+            "color2":"#747272",
+            "color3":"#769c6d",
+            "color4":"#5f6b52",
+            "color5":"#7c7a75",
+            "color6":"#d6d6d6",
+            "color7":"#ffffff"
+        },
+        "Swatch 2": {
+            "color1":"#000000",
+            "color2":"#000000",
+            "color3":"#94912e",
+            "color4":"#545454",
+            "color5":"#707272",
+            "color6":"#2d2d2d",
+            "color7":"#ffffff"
+        },
+        "Swatch 3": {
+            "color1":"#3e4349",
+            "color2":"#3e4349",
+            "color3":"#3e4349",
+            "color4":"#3e4349",
+            "color5":"#70727a",
+            "color6":"#3e4349",
+            "color7":"#ffffff"
+        },
+        "Swatch 4": {
+            "color1":"#515151",
+            "color2":"#515151",
+            "color3":"#ca952d",
+            "color4":"#3c4a55",
+            "color5":"#666c70",
+            "color6":"#000000",
+            "color7":"#ffffff"
+        },
+        "Swatch 5": {
+            "color1":"#515151",
+            "color2":"#515151",
+            "color3":"#d48d7a",
+            "color4":"#3c4a55",
+            "color5":"#666c70",
+            "color6":"#000000",
+            "color7":"#FFFFFF"
+        }
+    },
+    "fontSwatch": {
+       "title": "Lato",
+        "font1": {
+            "font-family": "\"Merriweather\", Georgia, serif",
+            "font-size": "34px",
+            "font-weight": "inherit",
+            "line-height": "44px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font2": {
+            "font-family": "\"Merriweather\", Georgia, serif",
+            "font-size": "22px",
+            "font-weight": "inherit",
+            "line-height": "36px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Merriweather\", Georgia, serif",
+            "font-size": "20px",
+            "font-weight": "inherit",
+            "line-height": "28px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Merriweather\", Georgia, serif",
+            "font-size": "16px",
+            "font-weight": "inherit",
+            "line-height": "24px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "14px",
+            "font-weight": "300",
+            "line-height": "20px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font6": {
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "14px",
+            "font-weight": "700",
+            "line-height": "26px",
+            "color": "fade(@color-swatch7, 70%)",
+            "color-hover": "@color-swatch7",
+            "letter-spacing": "inherit",
+            "background-color": "transparent",
+            "background-color-hover": "transparent"
+        },
+        "font7": {
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "14px",
+            "font-weight": "300",
+            "line-height": "14px",
+            "color": "@color-swatch7",
+            "letter-spacing": "1px",
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3,5%)"
+        },
+        "font8": {
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "18px",
+            "font-weight": "300",
+            "line-height": "28px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "18px",
+            "font-weight": "300",
+            "line-height": "28px",
+            "color": "@color-swatch5",
+            "letter-spacing": "2px"
+        },
+        "font10": {
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "24px",
+            "letter-spacing": "20px",
+            "font-weight": "700",
+            "line-height": "34px",
+            "color": "@color-swatch7",
+            "letter-spacing": "inherit"
+        }
+    }
+}
