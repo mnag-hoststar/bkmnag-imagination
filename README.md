@@ -1,4 +1,4 @@
-Oliver Thames
+Imagination
 ====
 
-Oliver Thames Standard Template
+Imagination Standard Template
