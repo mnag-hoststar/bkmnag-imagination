@@ -104,7 +104,7 @@
             "font-size": "14px",
             "font-weight": "700",
             "line-height": "26px",
-            "color": "fade(@color-swatch7, 70%)",
+            "color": "@color-swatch7",
             "color-hover": "@color-swatch7",
             "letter-spacing": "inherit",
             "background-color": "transparent",
@@ -118,7 +118,7 @@
             "color": "@color-swatch7",
             "letter-spacing": "1px",
             "background-color": "@color-swatch3",
-            "background-color-hover": "darken(@color-swatch3,5%)"
+            "background-color-hover": "@color-swatch3"
         },
         "font8": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
