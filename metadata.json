@@ -12,16 +12,16 @@
     "colorSwatches":
     {
         "Swatch 1": {
-            "color1":"#000000",
+            "color1":"#F1F1EF",
             "color2":"#747272",
             "color3":"#769c6d",
             "color4":"#5f6b52",
             "color5":"#7c7a75",
-            "color6":"#d6d6d6",
+            "color6":"#28332D",
             "color7":"#ffffff"
         },
         "Swatch 2": {
-            "color1":"#000000",
+            "color1":"#F1F1EF",
             "color2":"#000000",
             "color3":"#94912e",
             "color4":"#545454",
@@ -30,7 +30,7 @@
             "color7":"#ffffff"
         },
         "Swatch 3": {
-            "color1":"#3e4349",
+            "color1":"#F1F1EF",
             "color2":"#3e4349",
             "color3":"#3e4349",
             "color4":"#3e4349",
@@ -39,7 +39,7 @@
             "color7":"#ffffff"
         },
         "Swatch 4": {
-            "color1":"#515151",
+            "color1":"#F1F1EF",
             "color2":"#515151",
             "color3":"#ca952d",
             "color4":"#3c4a55",
@@ -48,7 +48,7 @@
             "color7":"#ffffff"
         },
         "Swatch 5": {
-            "color1":"#515151",
+            "color1":"#F1F1EF",
             "color2":"#515151",
             "color3":"#d48d7a",
             "color4":"#3c4a55",
@@ -61,15 +61,15 @@
        "title": "Lato",
         "font1": {
             "font-family": "\"Merriweather\", Georgia, serif",
-            "font-size": "34px",
+            "font-size": "40px",
             "font-weight": "inherit",
-            "line-height": "44px",
+            "line-height": "48px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
         "font2": {
             "font-family": "\"Merriweather\", Georgia, serif",
-            "font-size": "22px",
+            "font-size": "30px",
             "font-weight": "inherit",
             "line-height": "36px",
             "color": "@color-swatch4",
@@ -79,7 +79,7 @@
             "font-family": "\"Merriweather\", Georgia, serif",
             "font-size": "20px",
             "font-weight": "inherit",
-            "line-height": "28px",
+            "line-height": "24px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
@@ -87,7 +87,7 @@
             "font-family": "\"Merriweather\", Georgia, serif",
             "font-size": "16px",
             "font-weight": "inherit",
-            "line-height": "24px",
+            "line-height": "20px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
@@ -122,19 +122,19 @@
         },
         "font8": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
-            "font-size": "18px",
+            "font-size": "40px",
             "font-weight": "300",
-            "line-height": "28px",
-            "color": "@color-swatch5",
-            "letter-spacing": "inherit"
+            "line-height": "48px",
+            "color": "@color-swatch7",
+            "letter-spacing": "7px"
         },
         "font9": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "18px",
             "font-weight": "300",
             "line-height": "28px",
-            "color": "@color-swatch5",
-            "letter-spacing": "2px"
+            "color": "@color-swatch7",
+            "letter-spacing": "inherit"
         },
         "font10": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",

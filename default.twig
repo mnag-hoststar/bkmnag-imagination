@@ -1,32 +1,22 @@
 {% extends "layout.twig" %}
-
 {% block content %}
 
-<div class="row container">
-    <div class="three col">
-        <header class="bk-header">
-            <div class="contain">
-                <div class="companyheader">
-                    {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
-                    {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-                </div>
-            </div>
-            {% if pages|length > 1 %}
-                {{widget('extendednavigation', 'navigationheader', {})|raw}}
-            {% endif %}
-            {{widget('profile', 'headericons', { 'profileType': 'socialicons' })|raw}}
-            <div class="contain sticktobottom">
-                {{widget('content', 'contentfooter', {content: 'This is a content widget.', lines: 'all'})|raw}}
-                {{widget('button', 'feature-button', {text:'GET IN TOUCH' })|raw}}
-                <h5>{{widget('profile', 'copyright', { 'profileType': 'copyright' })|raw}}</h5>
-            </div>
-        </header>
-    </div>
-    <div class="nine col">
-        <div role ="main">
-            {{zone('main')|raw}}
-        </div>     
-    </div>
-</div>
+<div id="wrap">
+	<div class="bk-pt-default">
+		<nav class="bk-nav" id="nav">
+			{{widget('extendednavigation', 'navigationheader', {"align":"left"})|raw}}
+			{{widget('socialicons', 'social', {'googleplus': 'https://plus.google.com/101946323226233111530', 'linkedin':'http://www.linkedin.com/company/basekit', 'facebook': 'https://www.facebook.com/TeamBaseKit', 'twitter': 'https://twitter.com/basekit', 'youtube': 'https://www.youtube.com/user/TeamBaseKit', 'rss': 'http://blogdiseno.basekit.es/feed/'})|raw}}
+		</nav>
+		<header class="bk-header">
+				{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
+				{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+		</header>
+		{{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0','showBtn': true, 'align':'left'})|raw}}
+		<div class="contain" id="contain">
+			{{zone('main')|raw}}
+			{% include 'includes/footer.twig' %}
+		</div><!--end contain-->
+	</div><!--end bk-pt-default-->
+</div><!--end wrap-->
 
 {% endblock %}
