@@ -1,6 +1,7 @@
 {
     "name":"Imagination",
-    "thumbnail":"imagination.png",
+    "thumbnail":"thumbnail.png",
+    "screenshot":"imagination-screenshot.jpg",
     "templateType":"standard",
     "images":["/images/feature-bg.jpg"],
     "pageTypes":["home"],
