@@ -1244,7 +1244,8 @@ input, .widget.profile form fieldset input, a.checkout-empty-link,
 	}
 }
 
-label, .widget.contactform label,
+label, 
+.contactform label, .advancedcontactform label,
 .signupform fieldset label,
 .widget.blogsearch label,
 span.ecom-product-vartitle {
@@ -1258,7 +1259,7 @@ span.ecom-product-vartitle {
 }
 
 
-select, input[type=search] {
+select, input {
 	font-family: @font-swatch5-font-family;
 	font-size: @font-swatch5-font-size;
 	font-weight: @font-swatch5-font-weight;
@@ -1279,7 +1280,10 @@ select, input[type=search] {
 		border: 1px solid darken(@color-swatch1, 30%);
 		.transition(ease, .5s, border);
 	}
+}
 
+.form-group {
+	margin-bottom: 1em;
 }
 
 .productlist-item-count {
@@ -1372,7 +1376,6 @@ select, input[type=search] {
 .widget {
 	&.contactform {
 		label {
-			margin: 16px 0 8px;
 		}
 		button {
 			margin: 20px 0;
@@ -1781,7 +1784,8 @@ blockquote {
 /* 12. Buttons */
 
 button.btn,
-.widget.contactform button.btn,
+.contactform button, .contactform button.btn, 
+.advancedcontactform button, .advancedcontactform button.btn
 .widget.button button,
 .widget.profile form button,
 .widget.signupform fieldset button,
