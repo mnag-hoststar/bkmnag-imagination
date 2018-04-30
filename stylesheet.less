@@ -2,16 +2,17 @@
 
 1. Imports & Includes
 2. Mixins
-3. Header & Navigation
-4. Feature
-5. Main & Contain
-6. Footer
-7. Blog
-8. Menu
-9. Ecommerce
-10. Forms
-11. Misc Elements (Social, Typography etc.)
-12. Buttons
+3. Language Selector
+4. Header & Navigation
+5. Feature
+6. Main & Contain
+7. Footer
+8. Blog
+9. Menu
+10. Ecommerce
+11. Forms
+12. Misc Elements (Social, Typography etc.)
+13. Buttons
 
 */
 
@@ -35,48 +36,355 @@
 .transition (@prop: all, @time: 0.5s, @ease: ease) {
 	-webkit-transition:	@prop @time @ease;  
 	-moz-transition:	@prop @time @ease;
-	-ms-transition:		@prop @time @ease; 
+	-ms-transition:		@prop @time @ease;
 	-o-transition:		@prop @time @ease;  
 }
 
-/* 3. Header & Navigation */
+/* 3. Language Selector */
 
-.bk-header {
-	padding: 30px 70px 30px 30px;
-	width: 100%;
-	position: fixed;
-	z-index: 999;
-	@media @dektop-md {
+@language-padding: 0.5em;
+@language-line-height: @font-swatch6-line-height;
+
+// General styles
+
+.language-selector {
+	&.language-selector--horizontal,
+	&.language-selector--dropdown {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+	    z-index: 400;
+        opacity: 1;
+		box-sizing: content-box;
+		margin: 0 auto;
+        @transition(opacity, 0.3s, ease);
+	}
+
+	&.language-selector--light,
+	&.language-selector--dark {
 		background-color: fade(@color-swatch6, 50%);
+    	@media @desktop-lg {
+		    background-color: transparent;
+    	}
+	}
+	
+	&.language-selector--dropdown {
+		height: auto;
+		text-align: left;
+	}
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	font-family: @font-swatch6-font-family;
+    	font-size: @font-swatch6-font-size;
+    	font-weight: @font-swatch6-font-weight;
+    	line-height: @language-line-height;
+    	letter-spacing: @font-swatch6-letter-spacing;
+    	color: @font-swatch6-color;
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
+    }
+    &.language-selector--hide {
+        opacity: 0;
+    }
+}
+	
+// Inner
+
+.language-selector__inner {
+    .language-selector & {
+	    box-sizing: content-box;
+    	padding: 12px+12px+@language-line-height+4px 40px @language-padding*3 40px;
+		height: 0;
+		@media @mobile {
+    		padding: 20px+20px+@language-line-height+4px 20px @language-padding*3 20px;
+		}
+    }
+    
+    .language-selector.language-selector--horizontal & {
+		padding: 12px 40px;
+		height: auto;
+		@media @mobile {
+			padding: 20px;
+		}
+    }
+
+	.language-selector.language-selector--dropdown & {
+    	&:before {
+    	    content: "";
+            display: block;
+    	    height: @language-line-height;
+    	}
+    	&:after {
+    	    content: "";
+            display: block;
+    	    height: @language-padding*2;
+    	}
+		@media @mobile {
+			width: 100%;
+		}
+	}
+}
+	
+// List
+
+.language-selector__list {
+    .language-selector & {
+	    min-width: auto;
+    }
+	
+	.language-selector.language-selector--dropdown & {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 12px 40px 12px 40px;
+		min-width: auto;
+	    max-width: ~"calc(100% - 1em)";
+        @media @tablet {
+	    	max-width: 100%;
+        }
+		@media @mobile {
+			padding: 20px;
+			width: 100%;
+		}
+	}
+}
+	
+// Item
+
+.language-selector__item {
+	.language-selector.language-selector--light &,
+	.language-selector.language-selector--dark & {
+		cursor: pointer;
+	    position: relative;
+		border: none;
+		background-color: transparent;
+		max-width: 100%;
+		.transition(all, 0.75s, ease);
+		@media @mobile {
+	        width: auto;
+		}
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal & {
+		margin: @language-padding/2 0 @language-padding/2 @language-padding;
+    	border: 2px solid @color-swatch7;
+		
+		.language-selector--light& {
+			background-color: lighten(@font-swatch7-background-color, 20%);
+			
+			&:hover,
+			&--current {
+				&, &:hover {
+    				background-color: @font-swatch7-background-color;
+				}
+			}
+		}
+		.language-selector--dark& {
+			background-color: lighten(fade(@color-swatch6, 95%), 20%);
+			
+			&:hover,
+			&--current {
+				&, &:hover {
+                	background-color: fade(@color-swatch6, 95%);
+				}
+			}
+		}
+	}
+	.language-selector.language-selector--dropdown & {
+		width: 350px;
+		border-radius: 0;
+		@media @mobile {
+		    width: auto;
+		}
+		
+		&--current, &--current:hover {
+	        border: 2px solid @color-swatch7;
+		}
+		
+		.language-selector--light& {
+			background-color: @font-swatch7-background-color;
+			
+			&:hover {
+				background-color: lighten(@font-swatch7-background-color, 20%);
+			}
+			
+			&--current, &--current:hover {
+				background-color: @font-swatch7-background-color;
+			}
+		}
+		.language-selector--dark& {
+        	background-color: fade(@color-swatch6, 95%);
+			
+			&:hover {
+			    background-color: lighten(fade(@color-swatch6, 95%), 20%);
+			}
+			
+			&--current, &--current:hover {
+        	    background-color: fade(@color-swatch6, 95%);
+			}
+		}
+	}
+	
+	// Current Item
+	
+	&--current {
+	    &:after {
+    		.language-selector.language-selector--dropdown & {
+				position: absolute;
+        		content: "\25be";
+        		top: 50%;
+        		right: 0;
+        		margin-top: -(@language-line-height/4);
+        		width: @language-padding*4;
+    		    background-color: transparent;
+        		line-height: @language-line-height/2;
+        	    font-size: @font-swatch6-font-size;
+        		color: @font-swatch6-color;
+        		text-align: center;
+    		}
+	    }
 	}
 }
 
+// Link
+
+.language-selector__link {
+	.language-selector & {
+		box-sizing: border-box;
+		padding: 0 @language-padding*2;
+		border: none;
+		hyphens: auto;
+	}
+	
+	// Horizontal - Item
+	
+	.language-selector.language-selector--horizontal & {
+		text-align: right;
+		display: inline-block;
+	}
+	
+	// Dropdown - Item
+	
+	.language-selector.language-selector--dropdown & {
+		padding-right: @language-padding*4;
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal &,
+	.language-selector.language-selector--horizontal .language-selector__item--current &,
+	.language-selector.language-selector--dropdown &,
+	.language-selector.language-selector--dropdown .language-selector__item--current & {
+		.language-selector--light&,
+		.language-selector--dark& {
+			&,
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+// Icon
+
+.language-selector__icon {
+	.language-selector & {
+		margin-right: 0;
+		padding: @language-padding*1.5 0;
+		min-height: @language-line-height;
+		box-sizing: content-box;
+		line-height: @language-line-height;
+	}
+	.language-selector.language-selector--flag-text & {
+		margin: 0;
+	}
+	.language-selector.language-selector--dropdown.language-selector--flag-text & {
+		float: left;
+		box-sizing: border-box;
+		line-height: @language-line-height;
+	}
+}
+
+// Name
+
+.language-selector__name,
+.language-selector__localised-name {
+	.language-selector.language-selector--flag-text & {
+		display: inline-block;
+		padding: @language-padding*1.5 0 @language-padding*1.5 @language-padding;
+	}
+	.language-selector.language-selector--text &,
+	.language-selector.language-selector--flag & {
+		padding: @language-padding*1.5 0;
+	}
+	.language-selector.language-selector--text & {
+		display: block;
+	}
+	
+	.language-selector.language-selector--dropdown & {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		
+		.language-selector--flag-text& {
+			@media only screen and (max-width: 380px) {
+				display: none;
+			}
+		}
+	}
+}
+
+// Influence of the Language Selector on the Header and Navigation
+
+.language-selector + #wrap .bk-nav,
+.language-selector + #wrap .bk-header {
+    top: 12px+12px+@language-line-height+4px;
+    margin-top: @language-padding*3;
+	@media @mobile {
+		top: 20px+20px+@language-line-height+4px;
+	}
+}
+
+/* 4. Header & Navigation */
+
+.bk-header {
+	padding: 30px 420px 30px 30px;
+	width: 100%;
+	position: fixed;
+	z-index: 300;
+	@media @dektop-md {
+		background-color: fade(@color-swatch6, 50%);
+	    padding: 30px 120px 30px 30px;
+	}
+}
 
 .bk-nav {
 	background-color: fade(@color-swatch6, 95%);
 	border: 2px solid @color-swatch7;
 	position: fixed;
 	top: 40px;
-	right: -25%;
-	width: 25%;
-	z-index: 9999;
+	right: -350px;
+	width: 350px;
+	z-index: 350;
 	.transition( all, 0.5s, ease);
 	@media @desktop-lg {
 		right: 40px;
-		max-width: 350px;
-	}
-	@media @desktop-sm {
-		width: 35%;
-		right: -35%;
-	}
-	@media @tablet {
-		width: 50%;
-		right: -50%;
 	}
 	@media only screen and (max-height: 450px) {
 		height: auto;
 	}
 	@media @mobile {
+	    top: 0;
 		width: 100%;
 		height: 100%;
 		right: -100%;
@@ -84,70 +392,15 @@
 	.widget.socialicons {
 		padding: 40px;
 		float: left;
-		border-top: 2px solid #FFF;
+		border-top: 2px solid #fff;
 		margin: 0;
 		width: 100%;
 		text-align: center;
 		@media @mobile {
 			padding: 30px;
 		}
-		.bk-socialicons-linkedin {
-			a {
-				background-image: image('/images/social/socialicons-linkedin.svg');
-				opacity: 1;
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
-		.bk-socialicons-twitter {
-			a {
-				background-image: image('/images/social/socialicons-twitter.svg');
-				opacity: 1;
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
-		.bk-socialicons-facebook {
-			a {
-				background-image: image('/images/social/socialicons-facebook.svg');
-				opacity: 1;
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
-		.bk-socialicons-rss {
-			a {
-				background-image: image('/images/social/socialicons-rss.svg');
-				opacity: 1;
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
-		.bk-socialicons-googleplus {
-			a {
-				background-image: image('/images/social/socialicons-googleplus.svg');
-				opacity: 1;
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
-		.bk-socialicons-youtube {
-			a {
-				background-image: image('/images/social/socialicons-youtube.svg');
-				opacity: 1;
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
 	}
 }
-
 
 .bk-pt-default {
 	.bk-header {
@@ -213,8 +466,7 @@
 	}
 }
 
-.widget.extendednavigation {
-	float: left;
+.widget.extendednavigation .extendednavigation {
 	padding: 30px;
 	width: 100%;
 	ul {
@@ -222,6 +474,7 @@
 		padding: 0;
 		list-style: none;
 		width: 100%;
+		float: none !important;
 		@media @tablet {
 			display: block;
 		}
@@ -277,8 +530,18 @@
 			&.folder {
 				color: @font-swatch6-color;
 				&:after {
-					border-top-color: lighten(@color-swatch5, 32%);
-					top: 22px;
+				    border-width: 0;
+    				position: absolute;
+            		content: "\25be";
+            		top: 50%;
+            		right: 0;
+            		margin-top: -(@language-line-height/4);
+            		width: auto;
+        		    background-color: transparent;
+            		line-height: @language-line-height/2;
+            	    font-size: @font-swatch6-font-size;
+            		color: @font-swatch6-color;
+            		text-align: center;
 				}
 				.text {
 					color: @font-swatch6-color;
@@ -297,7 +560,7 @@
 		}
 		position: absolute;
 		display: inline-block;
-		top: 0;
+        top: 20px;
 		left: -80px;
 		width: 40px;
 		height: 40px;
@@ -306,6 +569,12 @@
 		outline: none;
 		opacity: 0.5;
 		.transition(all, 0.5s, ease);
+		@media @tablet {
+		    left: -85px;
+		}
+		@media @mobile {
+		    left: -65px;
+		}
 		&:hover {
 			opacity: 1;
 			.transition(all, 0.5s, ease);
@@ -321,13 +590,6 @@
 	}
 	.bk-overlay {
 		width: 100%;
-	}
-}
-
-div.widget .extendednavigation ul, div.widget.extendednavigation ul {
-	display: block;
-	li {
-		display: block; 
 	}
 }
 
@@ -353,7 +615,7 @@ div.widget .extendednavigation ul, div.widget.extendednavigation ul {
 }
 
 
-/* 4. Feature */
+/* 5. Feature */
 
 .widget.feature {
 	height: 100%;
@@ -390,9 +652,16 @@ div.widget .extendednavigation ul, div.widget.extendednavigation ul {
 	}
 }
 
-/* 5. Main */
+// Vertically centering widget overlay icons
+
+.widget.feature .widget-overlay .widget__list {
+    top: 50%;
+}
+
+/* 6. Main */
 
 .contain {
+    z-index: 250;
 	padding: 80px;
 	margin: 0 auto;
 	max-width: 1200px;
@@ -426,7 +695,7 @@ div.widget .extendednavigation ul, div.widget.extendednavigation ul {
 }
 
 
-/* 6. Footer */
+/* 7. Footer */
 
 .bk-footer {
 	.copyright {
@@ -445,7 +714,7 @@ div.widget .extendednavigation ul, div.widget.extendednavigation ul {
 }
 
 
-/* 7. Blog */
+/* 8. Blog */
 
 .blogpost, .blog-post-list {
 	.blog-post-feature-image-wrap {
@@ -524,7 +793,7 @@ div.widget .extendednavigation ul, div.widget.extendednavigation ul {
 	}
 }
 
-/* 8. Menu */
+/* 9. Menu */
 
 
 .widget {
@@ -678,7 +947,7 @@ div.widget .extendednavigation ul, div.widget.extendednavigation ul {
 	}
 }
 
-/* 9. Ecommerce */
+/* 10. Ecommerce */
 
 .widget.ecomproductslist {
 	.ecom-productslist-product a {
@@ -1100,7 +1369,7 @@ div.widget .extendednavigation ul, div.widget.extendednavigation ul {
 }
 
 
-/* 10. Forms */
+/* 11. Forms */
 
 // INPUTS
 
@@ -1446,7 +1715,7 @@ select, input {
 	}
 }
 
-/* 11. Misc Elements */
+/* 12. Misc Elements */
 
 h1 {
 	@media @tablet {
@@ -1736,7 +2005,7 @@ blockquote {
 .widget.socialicons, .widget.profile .bk-profile-socialicons {
 	margin: 2em 0 1em;
 	span a {
-		background-size: 32px;
+		background-size: 12px;
 		background-color: @font-swatch7-background-color;
 		.border-radius(50%);
 		.transition(all, .5s, ease-out);
@@ -1747,40 +2016,7 @@ blockquote {
 	}
 }
 
-.svg {
-	.bk-socialicons-linkedin {
-		a {
-			background-image: image('/images/social/socialicons-linkedin.svg');
-		}
-	}
-	.bk-socialicons-twitter {
-		a {
-			background-image: image('/images/social/socialicons-twitter.svg');
-		}
-	}
-	.bk-socialicons-facebook {
-		a {
-			background-image: image('/images/social/socialicons-facebook.svg');
-		}
-	}
-	.bk-socialicons-rss {
-		a {
-			background-image: image('/images/social/socialicons-rss.svg');
-		}
-	}
-	.bk-socialicons-googleplus {
-		a {
-			background-image: image('/images/social/socialicons-googleplus.svg');
-		}
-	}
-	.bk-socialicons-youtube {
-		a {
-			background-image: image('/images/social/socialicons-youtube.svg');
-		}
-	}
-}
-
-/* 12. Buttons */
+/* 13. Buttons */
 
 button.btn,
 .contactform button, .contactform button.btn, 
@@ -1798,8 +2034,7 @@ button.btn,
 	padding: 0;
 	border: 0;
 	border-radius: 0;
-	height: 50px;
-	width: 20%;
+	min-height: 50px;
 	background-color: @font-swatch7-background-color;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
@@ -1826,9 +2061,6 @@ button.btn,
 .widget.ecomproduct .ecom-product .btn {
 	width: 100%;
 }
-
-
-
 
 /* Scrollbars */
 

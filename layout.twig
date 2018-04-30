@@ -14,47 +14,51 @@
 <!--[if gt IE 8]><!-->
 	<html class="no-js" lang="{{ page.seoLang }}">
 <!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<title>{{ page.title }}</title>
-	<meta name="keywords" content="{{ page.keywords }}" />
-	<meta name="description" content="{{ page.description }}" />
-	<meta http-equiv="content-language" content="{{ page.seoLang }}" />
-	{% if site.favicon %}
-		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
-		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
-	{% endif %}
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ page.title }}</title>
+		<meta name="keywords" content="{{ page.keywords }}" />
+		<meta name="description" content="{{ page.description }}" />
+		<meta http-equiv="content-language" content="{{ page.seoLang }}" />
+		{% if site.favicon %}
+			<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+			<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+		{% endif %}
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	{% include basekit.headScript %}
-</head>
-<body class="{{ page.backgroundClass }}">
+		{% include basekit.headScript %}
+	</head>
+	<body class="{{ page.backgroundClass }}">
 
-	{% block content %}
-	{% endblock %}
-	{% include basekit.bodyScript %}
-<script type="text/javascript">
-	! function () {
-	    function supportsSVG() {
-	        return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
-	    }
-	    if (supportsSVG()) document.documentElement.className += ' svg'
-	}()
-</script>
+		{% block content %}
+		{% endblock %}
+		{% include basekit.bodyScript %}
+		<script type="text/javascript">
+			! function () {
+				function supportsSVG() {
+					return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
+				}
+				if (supportsSVG()) document.documentElement.className += ' svg'
+			}()
+		</script>
 
-<script>
-  (function() {
-    var $body = document.getElementById("wrap");
-    $menu_trigger = document.getElementsByClassName('pull')[0];
-    if ( typeof $menu_trigger !== 'undefined' ) {
-      $menu_trigger.addEventListener('click', function() {
-        $body.className = ( $body.className == 'menu-active' )? '' : 'menu-active';
-        bk$(this).addClass('menu-active').removeClass('menu-active');
-     });
-    }
-  }).call(this);
-</script>
+		<script>
+		  (function() {
+			var $body = document.getElementById("wrap");
+			$menu_trigger = document.getElementsByClassName('pull')[0];
+			if ( typeof $menu_trigger !== 'undefined' ) {
+			  $menu_trigger.addEventListener('click', function() {
+				$body.className = ( $body.className == 'menu-active' )? '' : 'menu-active';
+				bk$(this).addClass('menu-active').removeClass('menu-active');
+			 });
+			}
+		  }).call(this);
+		</script>
 
-</body>
+		<!-- jQuery -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<script src="{{ asset('scripts.js')}}"></script>
+	</body>
 </html>
