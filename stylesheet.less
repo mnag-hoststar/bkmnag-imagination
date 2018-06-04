@@ -510,6 +510,7 @@
 					margin-left: 20px;
 					margin-top: 8px;
 					width: 90%;
+					display: block;
 					li {
 						padding: 12px 6px;
 						&:first-child {
@@ -521,9 +522,6 @@
 						a {
 							padding-left: 15px;
 						}
-					}
-					.text {
-						font-size: bkscale(@font-swatch6-font-size, 0.90);
 					}
 				}
 			}
@@ -538,10 +536,9 @@
 				&:after {
 				    border-width: 0;
     				position: absolute;
+    				top: 10px;
             		content: "\25be";
-            		top: 50%;
-            		right: 0;
-            		margin-top: -(@font-swatch6-line-height/4);
+            		margin-top: @font-swatch6-line-height/4;
             		width: auto;
         		    background-color: transparent;
             		line-height: @font-swatch6-line-height/2;
