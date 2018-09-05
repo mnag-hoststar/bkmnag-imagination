@@ -452,7 +452,7 @@
 		height: 24px;
 		position: absolute;
 		left: 50%;
-		bottom: 40px;
+		bottom: 80px;
 		transform: translate(-50%);
 	}
 }
@@ -778,6 +778,22 @@
 			text-align: center;
 		}
 	}
+}
+
+.gdpr-footer {
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 15px 20px;
+    background-color: fade(@color-swatch6, 50%);
+    
+    &__link {
+        color: @color-swatch7;
+        padding: 5px 10px;
+    }
 }
 
 
