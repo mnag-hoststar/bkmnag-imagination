@@ -143,7 +143,7 @@
 	.language-selector.language-selector--dropdown & {
 		box-sizing: border-box;
 		margin: 0;
-		padding: 12px 40px 12px 40px;
+		padding: 12px 30px 12px 30px;
 		min-width: auto;
 	    max-width: ~"calc(100% - 1em)";
         @media @tablet {
@@ -496,6 +496,7 @@
 .widget.extendednavigation .extendednavigation {
 	padding: 30px;
 	width: 100%;
+	
 	ul {
 		display: block;
 		padding: 0;
@@ -622,12 +623,12 @@
 		&:after {
 			content: '';
 			position: absolute;
-			right: 0;
+			right: -12px;
 			height: 2px;
 			width: 35px;
 			background: @color-swatch7;
 		    box-shadow: none;
-	        .transition-delay-2items(0s, 0.05s);
+	        .transition-delay(0s, 0.05s);
     		@media @tablet {
     			right: 0;
     			height: 2px;
@@ -712,10 +713,6 @@
 			font-size: bkscale(@font-swatch8-font-size, 0.7);
 			line-height: bkscale(@font-swatch8-line-height, 0.7);
 		}
-	}
-	h3 {
-	}
-	button {
 	}
 }
 
