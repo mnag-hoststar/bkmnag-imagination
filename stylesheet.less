@@ -874,7 +874,6 @@
 
 /* 9. Menu */
 
-
 .widget {
 	&.menusections {
 		a {
@@ -1231,7 +1230,6 @@
 }
 
 // Basket Summary
-// -----------------------------
 
 .widget.ecombasketsummary {
 	margin-bottom: 30px;
@@ -1620,6 +1618,41 @@ select, input {
 			@media @tablet {
 				margin-top: 20px;
 			}
+		}
+	}
+}
+
+// Privacy Checkboxes
+
+.widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
+.widget.contactform .form-group.contactform__form-group--terms,
+.widget.signupform .form-group.signupform__form-group--terms {
+	input[type="checkbox"] {
+		opacity: 1;
+		margin: 4px 8px 4px 4px;
+		padding: 0;
+		min-height: auto;
+		min-width: auto;
+		height: auto !important;
+		width: auto !important;
+		line-height: 1em;
+		-webkit-appearance: checkbox;
+		-moz-appearance: checkbox;
+		appearance: checkbox;
+	}
+	
+	label {
+		padding-bottom: 0;
+		
+		&:before {
+			display: none;
+		}
+		
+		.form__link {
+			font-family:@font-swatch5-font-family;
+            font-size: @font-swatch5-font-size;
+			font-weight:@font-swatch5-font-weight;
+			letter-spacing: @font-swatch5-letter-spacing;
 		}
 	}
 }
