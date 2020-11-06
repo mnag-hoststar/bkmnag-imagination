@@ -1,19 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]>
-	<html class="no-js ie6 oldie" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-	<html class="no-js ie7 oldie" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-	<html class="no-js ie8 oldie" lang="en">
-<![endif]-->
-<!--[if IE 9]>
-    <link rel="stylesheet" type="text/css" href="{{asset('/ie9.css')}}"/>
-<![endif]-->
-<!--[if gt IE 8]><!-->
+	<!--[if IE 9]>
+	    <link rel="stylesheet" type="text/css" href="{{asset('/ie9.css')}}"/>
+	<![endif]-->
 	<html class="no-js" lang="{{ page.seoLang }}">
-<!--<![endif]-->
 	<head>
 		<meta charset="utf-8" />
 		<title>{{ page.title }}</title>
@@ -29,7 +18,7 @@
 
 		{% include basekit.headScript %}
 	</head>
-	<body class="{{ page.backgroundClass }}">
+	<body class="{{ page.backgroundClass }}" {{ isV10sSite ? 'id="migrated"' : '' }}>
 
 		{% block content %}
 		{% endblock %}
@@ -40,7 +29,7 @@
 					return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
 				}
 				if (supportsSVG()) document.documentElement.className += ' svg'
-			}()
+			}();
 		</script>
 
 		<script>

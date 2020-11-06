@@ -4,6 +4,7 @@
     "screenshot":"imagination-screenshot.jpg",
     "templateType":"standard",
     "images":["/images/feature-bg.jpg"],
+    "versionTenCompatible": 1,
     "pageTypes":["home"],
     "tags": {
     "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
