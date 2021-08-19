@@ -33,6 +33,12 @@
 	border-radius:			@radius;
 }
 
+.appearance(@appearance: none) {
+    -webkit-appearance: @appearance;
+    -moz-appearance: @appearance;
+    appearance: @appearance;
+}
+
 .transition (@prop: all, @time: 0.5s, @ease: ease) {
 	-webkit-transition:	@prop @time @ease;  
 	-moz-transition:	@prop @time @ease;
@@ -1502,19 +1508,27 @@
 
 // INPUTS
 
-input, .widget.contactform input,
+input,
+.widget.contactform input,
 .widget.profile form fieldset input,
 .signupform fieldset input,
 .widget.blogsearch input,
-.productlist-display-form input[type=search] {
+.productlist-display-form input[type=search],
+textarea, .widget.contactform textarea,
+select {
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch5-font-weight;
+	line-height: @font-swatch5-line-height;
+	color: @font-swatch5-color;
+	letter-spacing: @font-swatch5-letter-spacing;
 	background-color: @color-swatch7;
 	border: 1px solid darken(@color-swatch1, 10%);
-	text-indent: 8px;
+	padding: 8px 10px 10px;
+	outline: none;
 	border-radius: 0;
 	height: 50px;
-	vertical-align: middle;
 	.transition(ease, .5s, border);
-	width: 80%;
 
 	.style--light & {
 		background-color: @color--light;
@@ -1563,50 +1577,37 @@ input, .widget.contactform input,
 	width: 100%;
 }
 
-// TEXTAREAS
+// Textareas
 
 textarea, .widget.contactform textarea {
-	background-color: @color-swatch7;
-	border: 1px solid darken(@color-swatch1, 10%);
-	text-indent: 8px;
-	border-radius: 0;
 	height: 150px;
-	vertical-align: middle;
-	.transition(ease, .5s, border);
+}
 
-	.style--light & {
-		background-color: @color--light;
-		border-color: darken(@color--light, 10%);
-		color: @contrast--light;
-    }
+// Select
 
-    .style--accent & {
-    	background-color: @color--light;
-    	border-color: darken(@color--accent, 10%);
-    	color: @contrast--light;
-    }
+select {
+	padding-right: 2.2em;
+    width: 100%;
+    .appearance(none) !important;
+	background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: right 0.5em center;
+    background-size: 1.2em;
 
-    .style--dark & {
-    	background-color: @color--light;
-    	border-color: lighten(@color--dark, 10%);
-    	color: @contrast--light;
-    }
+	&::-ms-expand {
+		display: none;
+	}
+}
 
-	&:hover, &:focus {
-		border: 1px solid darken(@color-swatch1, 30%);
-		.transition(ease, .5s, border);
+// Radiobuttons, Checkboxes
 
-		.style--light & {
-			border-color: darken(@color--light, 30%);
-	    }
-
-	    .style--accent & {
-	    	border-color: darken(@color--accent, 30%);
-	    }
-
-	    .style--dark & {
-	    	border-color: lighten(@color--dark, 30%);
-	    }
+.contactform .option-item--radio,
+.contactform .option-item--checkbox,
+.advancedcontactform .option-item--radio,
+.advancedcontactform .option-item--checkbox {
+	label {
+		label;
+		word-break: break-word;
 	}
 }
 
@@ -1651,61 +1652,6 @@ span.ecom-product-vartitle {
     .style--dark & {
         color: @contrast--dark;
     }
-}
-
-
-select, input {
-	font-family: @font-swatch5-font-family;
-	font-size: @font-swatch5-font-size;
-	font-weight: @font-swatch5-font-weight;
-	line-height: @font-swatch5-line-height;
-	color: @font-swatch5-color;
-	letter-spacing: @font-swatch5-letter-spacing;
-	border: 1px solid darken(@color-swatch1, 10%);
-	background-color: @color-swatch7;
-	text-indent: 0;
-	width: 100%;
-	padding: 8px 10px 10px;
-	outline: none;
-	border-radius: 0;
-	height: 50px;
-	cursor: pointer;
-	.transition(ease, .5s, border);
-
-	.style--light & {
-		background-color: @color--light;
-		border-color: darken(@color--light, 10%);
-		color: @contrast--light;
-    }
-
-    .style--accent & {
-    	background-color: @color--light;
-    	border-color: darken(@color--accent, 10%);
-    	color: @contrast--light;
-    }
-
-    .style--dark & {
-    	background-color: @color--light;
-    	border-color: lighten(@color--dark, 10%);
-    	color: @contrast--light;
-    }
-
-	&:hover {
-		border: 1px solid darken(@color-swatch1, 30%);
-		.transition(ease, .5s, border);
-
-		.style--light & {
-			border-color: darken(@color--light, 30%);
-	    }
-
-	    .style--accent & {
-	    	border-color: darken(@color--accent, 30%);
-	    }
-
-	    .style--dark & {
-	    	border-color: lighten(@color--dark, 30%);
-	    }
-	}
 }
 
 .form-group {
