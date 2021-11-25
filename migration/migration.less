@@ -1,18 +1,8 @@
-
-// -------------------------------------------
-//  Migration Styles -
-//
-//  These changes allow rows to work with
-//  existing templates in BK10
-// -------------------------------------------
-
-
+//  Migration Styles
 
 // Template styling resets
-// ------------------------------------
 
 #migrated {
-
     .contain {
         padding: 0 0 80px;
 
@@ -60,35 +50,28 @@
         }
     }
 
-    // Hides the row overlay bars as the template is contained
     .row-overlay:before,
     .row-overlay:after {
         display: none;
     }
 }
 
-
-
 // Row improvments
-// ------------------------------------
 
 [id^="migrate"] .row--image-text-7a blockquote {
     padding: 12px;
 }
 
 // Hides the caption for the logo section
+
 [class*="row--logos"] .widget.gallery .image-data {
     display: none;
     visibility: hidden;
 }
 
-
-
 // Re-add the reset styles
-// ------------------------------------
 
 #migrated {
-
     .empty-zone,
     #page-zones__main:empty,
     #page-zones__main > .widget:not([data-name="row"]),

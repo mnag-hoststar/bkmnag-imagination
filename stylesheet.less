@@ -1,4 +1,4 @@
-/* Imports & Includes */
+// Imports & Includes
 
 @import "@{templateCommon}/basekit-bootstrap.less";
 @desktop-lg: ~"only screen and (min-width: 1600px)";
@@ -7,7 +7,7 @@
 @tablet: ~"only screen and (max-width: 860px)";
 @mobile: ~"only screen and (max-width: 650px)";
 
-/* Mixins */
+// Mixins
 
 .border-radius (@radius: 6px) {
 	-webkit-border-radius:	@radius;
@@ -28,7 +28,7 @@
 	-o-transition:		@prop @time @ease;  
 }
 
-/* Language Selector */
+// Language Selector
 
 @language-padding: 0.5em;
 @language-line-height: @font-swatch6-line-height;
@@ -191,6 +191,7 @@
 				}
 			}
 		}
+
 		.language-selector--dark& {
 			background-color: lighten(fade(@color-swatch6, 95%), 20%);
 			
@@ -202,6 +203,7 @@
 			}
 		}
 	}
+
 	.language-selector.language-selector--dropdown & {
 		width: 350px;
 		border-radius: 0;
@@ -365,7 +367,7 @@
 	}
 }
 
-/* Header & Navigation */
+// Header & Navigation
 
 .bk-header {
 	padding: 24px 420px 24px 30px;
@@ -473,7 +475,6 @@
 		transform: translate(-50%);
 	}
 }
-
 
 .widget {
 	&.logo, &.companyname {
@@ -730,7 +731,7 @@
 	}
 }
 
-/* Feature */
+// Feature
 
 .widget.feature {
 	height: 100%;
@@ -771,7 +772,7 @@
     top: 50%;
 }
 
-/* Main */
+// Main
 
 .contain {
     z-index: 250;
@@ -808,8 +809,7 @@
 	width: 100%;
 }
 
-
-/* Footer */
+// Footer
 
 .bk-footer {
 	.copyright {
@@ -862,12 +862,13 @@
 }
 
 
-/* Blog */
+// Blog
+
 
 .blogpost, .blog-post-list {
 	.blog-post-feature-image-wrap {
 		background-size: cover;
-		background-position: center center;
+		background-position: center;
 		margin: 20px 0;
 		width: auto;
 
@@ -977,7 +978,7 @@
 	}
 }
 
-/* Menu */
+// Menu
 
 .widget {
 	&.menusections {
@@ -1014,8 +1015,8 @@
 .widget.menusections ul li {
 	display: inline-block;
 	margin: 0 0.4em;
-
 }
+
 .menu {
 	.menu-item-image-wrap {
 		background-size: cover;
@@ -1138,7 +1139,8 @@
 	}
 }
 
-/* Ecommerce */
+// Ecommerce
+
 
 .widget.ecomproductslist {
 	.ecom-productslist-product a {
@@ -1393,7 +1395,6 @@
 	padding: 18px;
 }
 
-
 .widget.ecombasket {
 	.ecombasket-pull {
 		width: 150px;
@@ -1437,6 +1438,7 @@
 	margin-bottom: 30px;
 
 	// Image Wrap
+
 	.image-wrap {
 		background-position: -10000%;
 
@@ -1654,10 +1656,10 @@
 	}
 }
 
+// Forms
 
-/* Forms */
 
-// INPUTS
+// Inputs
 
 input,
 .widget.contactform input,
@@ -1980,7 +1982,7 @@ span.ecom-product-vartitle {
 	}
 }
 
-/* 12. Misc Elements */
+// Misc Elements
 
 h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
     word-break: break-word;
@@ -2181,6 +2183,7 @@ blockquote {
 }
 
 // Twitter Feed
+
 .widget.twitter {
 	margin: 20px 0;
 
@@ -2539,7 +2542,7 @@ blockquote {
 	}
 }
 
-/* Buttons */
+// Buttons
 
 button.btn,
 .contactform button, .contactform button.btn, 
@@ -2622,7 +2625,6 @@ a.contentgroup__link {
 	width: 100%;
 }
 
-/* Scrollbars */
 
 body, html {
 	-ms-overflow-style: none;
