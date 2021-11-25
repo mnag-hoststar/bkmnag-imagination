@@ -1790,6 +1790,9 @@
 
 // Forms
 
+.form-group {
+	margin-bottom: 1em;
+}
 
 // Inputs
 
@@ -1850,7 +1853,7 @@ select {
 	    }
 	}
 
-	@media @tablet {
+	@media @mobile {
 		width: 100%;
 	}
 }
@@ -1887,39 +1890,30 @@ select {
 
 // Radiobuttons, Checkboxes
 
-.contactform .option-item--radio,
-.contactform .option-item--checkbox,
-.advancedcontactform .option-item--radio,
-.advancedcontactform .option-item--checkbox {
-	label {
+.contactform,
+.advancedcontactform {
+	label,
+	label.label--radio,
+	label.label--checkbox {
 		label;
-		word-break: break-word;
+	}
+
+	.option-list {
+		label {
+			display: inline;
+			word-break: break-word;
+		}
 	}
 }
 
-// Ecommerce Filter Forms
+// Label
 
-.form-group.productlist-search {
-	position: relative;
-	float: left;
-	margin: 0 0 20px;
-	input[type=search] {
-		padding-right: 100px;
-		box-sizing: border-box;
-	}
-	button {
-		position: absolute;
-		right: 0;
-		bottom: 10px;
-	}
-}
-
-label, 
-.contactform label, .advancedcontactform label,
+label,
 .signupform fieldset label,
 .widget.blogsearch label,
 span.ecom-product-vartitle {
-	padding-bottom: .4em;
+	display: block;
+	padding-bottom: 0.4em;
 	width: 100%;
 	font-family: @font-swatch5-font-family;
 	font-size: @font-swatch5-font-size;
@@ -1937,103 +1931,6 @@ span.ecom-product-vartitle {
     .style--dark & {
         color: @contrast--dark;
     }
-}
-
-.form-group {
-	margin-bottom: 1em;
-}
-
-.widget.paypalbuynow .widget.button.paypal, 
-.widget.dropbox button,
-.widget.tweet a {
-	color: @font-swatch7-color;
-	background-color: @font-swatch7-background-color;
-	text-transform: uppercase;
-	.transition(all, .5s, ease-out);
-
-	.style--light & {
-		background-color: @color--accent;
-        color: @contrast--accent;
-    }
-
-    .style--accent & {
-    	background-color: @color--dark;
-        color: @contrast--dark;
-    }
-
-    .style--dark & {
-    	background-color: @color--accent;
-        color: @contrast--accent;
-    }
-
-	&:hover {
-		background-color: @font-swatch7-background-color-hover;
-		.transition(all, 0.75s, ease);
-
-		.style--light & {
-			background-color: darken(@color--accent, 10%);
-	    }
-
-	    .style--accent & {
-	    	background-color: darken(@color--dark, 10%);
-	    }
-
-	    .style--dark & {
-	    	background-color: darken(@color--accent, 10%);
-	    }
-	}
-}
-
-.widget.paypalbuynow .widget.button.paypal, .widget.paypalbuynow .widget.button.paypal:hover {
-	background-image: image('/images/ic-paypal.svg');
-}
-
-.widget.dropbox button, .widget.dropbox button:hover  {
-	background-image: image('/images/ic-dropbox.svg');
-}
-
-.widget.tweet a, .widget.tweet a:hover {
-	background-image: image('/images/ic-tweet.svg');
-}
-
-.widget.tweet a {
-	padding: 15px 40px 15px 60px;
-}
-
-.widget {
-	&.contactform {
-		button {
-			margin: 20px 0;
-
-			@media @mobile {
-				width: 100%;
-			}
-		}
-	}
-	&.profile {
-		form {
-			button {
-				@media @tablet {
-					margin-top: 20px;
-				}
-			}
-		}
-	}
-	&.signupform fieldset {
-		button {
-			@media @tablet {
-				margin-top: 20px;
-			}
-		}
-	}
-	&.blogsearch {
-		margin: 10px 0;
-		button {
-			@media @tablet {
-				margin-top: 20px;
-			}
-		}
-	}
 }
 
 // Privacy Checkboxes
@@ -2646,8 +2543,10 @@ blockquote {
 // Buttons
 
 button.btn,
-.contactform button, .contactform button.btn, 
-.advancedcontactform button, .advancedcontactform button.btn
+.contactform button,
+.contactform button.btn, 
+.advancedcontactform button,
+.advancedcontactform button.btn,
 .widget.button button,
 .widget.profile form button,
 .widget.signupform fieldset button,
@@ -2673,6 +2572,14 @@ button.btn,
 	text-decoration: none;
 	text-transform: uppercase;
 	.transition(all, .5s, ease-out);
+	
+	@media @mobile {
+		width: 100%;
+	}
+	
+	.responsivecolumns & {
+		width: 100%;
+	}
 
 	.style--light & {
 		background-color: @color--accent;
@@ -2706,16 +2613,67 @@ button.btn,
 	    	background-color: darken(@color--accent, 10%);
 	    }
 	}
+}
 
-	@media @tablet {
-		width: 50%;
-	}
-	
-	@media @mobile {
-		width: 100%;
+.widget.paypalbuynow .widget.button.paypal, 
+.widget.dropbox button,
+.widget.tweet a {
+	color: @font-swatch7-color;
+	background-color: @font-swatch7-background-color;
+	text-transform: uppercase;
+	.transition(all, .5s, ease-out);
+
+	.style--light & {
+		background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+    	background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+    	background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+	&:hover {
+		background-color: @font-swatch7-background-color-hover;
+		.transition(all, 0.75s, ease);
+
+		.style--light & {
+			background-color: darken(@color--accent, 10%);
+	    }
+
+	    .style--accent & {
+	    	background-color: darken(@color--dark, 10%);
+	    }
+
+	    .style--dark & {
+	    	background-color: darken(@color--accent, 10%);
+	    }
 	}
 }
 
+.widget.paypalbuynow .widget.button.paypal,
+.widget.paypalbuynow .widget.button.paypal:hover {
+	background-image: image('/images/ic-paypal.svg');
+}
+
+.widget.dropbox button,
+.widget.dropbox button:hover  {
+	background-image: image('/images/ic-dropbox.svg');
+}
+
+.widget.tweet a,
+.widget.tweet a:hover {
+	background-image: image('/images/ic-tweet.svg');
+}
+
+.widget.tweet a {
+	padding: 15px 40px 15px 60px;
+}
 
 a.contentgroup__link {
 	align-items: center;
@@ -2726,6 +2684,13 @@ a.contentgroup__link {
 	width: 100%;
 }
 
+.form-group.js-recaptcha {
+	margin-bottom: 0;
+
+	> *:last-child {
+		margin-bottom: 1em;
+	}
+}
 
 body, html {
 	-ms-overflow-style: none;
