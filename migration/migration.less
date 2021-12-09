@@ -1,5 +1,8 @@
 //  Migration Styles
 
+//  These changes allow rows to work with
+//  existing templates in BK10
+
 // Template styling resets
 
 #migrated {
@@ -16,26 +19,25 @@
     }
 
     &.edit {
-
         .bk-header,
         [data-widget-type="feature"] {
-            @media only screen and (min-width: 930px) {
+            @media @tablet-large {
                 width: ~"calc(100% - 200px)";
             }
         }
 
         .bk-nav {
-            @media only screen and (min-width: 930px) {
+            @media @tablet-large {
                 right: -350px;
             }
 
-            @media only screen and (min-width: 1600px) {
+            @media @desktop-large {
                 right: 130px;
             }
         }
 
         .extendednavigation a.pull {
-            @media only screen and (min-width: 930px) {
+            @media @tablet-large {
                 left: -182px;
             }
         }
@@ -49,7 +51,8 @@
             display: none;
         }
     }
-
+    
+    // Hides the row overlay bars as the template is contained
     .row-overlay:before,
     .row-overlay:after {
         display: none;
@@ -63,7 +66,6 @@
 }
 
 // Hides the caption for the logo section
-
 [class*="row--logos"] .widget.gallery .image-data {
     display: none;
     visibility: hidden;
@@ -97,6 +99,6 @@
 
     // Add spacing to the top of a widget when it follows a row
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
-        margin-top: 20px;           // Widget margin bottom
+        margin-top: 20px; // Widget margin bottom
     }
 }
