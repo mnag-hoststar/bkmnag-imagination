@@ -1,18 +1,25 @@
 // Imports & Includes
 
 @import "@{templateCommon}/basekit-bootstrap.less";
-@desktop-lg: ~"only screen and (min-width: 1600px)";
-@dektop-md: ~"only screen and (max-width: 1600px)";
-@desktop-sm: ~"only screen and (max-width: 1200px)";
+
+@desktop-large: ~"only screen and (min-width: 1600px)";
+@dektop-medium: ~"only screen and (max-width: 1600px)";
+@desktop-small: ~"only screen and (max-width: 1200px)";
+@desktop-smaller: ~"only screen and (max-width: 1000px)";
+@tablet-large: ~"only screen and (min-width: 930px)";
 @tablet: ~"only screen and (max-width: 860px)";
 @mobile: ~"only screen and (max-width: 650px)";
+@mobile-medium: ~"only screen and (max-height: 480px)";
+@mobile-small: ~"only screen and (max-height: 450px)";
+@mobile-smaller: ~"only screen and (max-height: 420px)";
+@mobile-smallest: ~"only screen and (max-width: 380px)";
 
 // Mixins
 
 .border-radius (@radius: 6px) {
-	-webkit-border-radius:	@radius;
-	-moz-border-radius:		@radius;
-	border-radius:			@radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
 }
 
 .appearance(@appearance: none) {
@@ -22,10 +29,10 @@
 }
 
 .transition (@prop: all, @time: 0.5s, @ease: ease) {
-	-webkit-transition:	@prop @time @ease;  
-	-moz-transition:	@prop @time @ease;
-	-ms-transition:		@prop @time @ease;
-	-o-transition:		@prop @time @ease;  
+	-webkit-transition: @prop @time @ease;  
+	-moz-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;  
 }
 
 // Language Selector
@@ -53,7 +60,7 @@
 	&.language-selector--dark {
 		background-color: fade(@color-swatch6, 50%);
 		
-    	@media @desktop-lg {
+    	@media @desktop-large {
 		    background-color: transparent;
     	}
 	}
@@ -348,7 +355,7 @@
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 380px) {
+			@media @mobile-smallest {
 				display: none;
 			}
 		}
@@ -375,7 +382,7 @@
 	position: fixed;
 	z-index: 300;
 
-	@media @dektop-md {
+	@media @dektop-medium {
 		background-color: fade(@color-swatch6, 50%);
 	    padding: 24px 120px 24px 30px;
 	}
@@ -395,7 +402,7 @@
 	z-index: 350;
 	.transition(all, 0.5s, ease);
 
-	@media @desktop-lg {
+	@media @desktop-large {
 		right: 30px;
 	}
 
@@ -410,7 +417,7 @@
         transition-property: none;
 	}
 
-	@media only screen and (max-height: 450px) {
+	@media @mobile-small {
 		height: auto;
 	    .transition(all, 0.5s, ease);
 	}
@@ -493,7 +500,7 @@
 				vertical-align: top;
 			}
 
-			@media only screen and (max-height: 450px) {
+			@media @mobile-small {
 				max-width: 80%;
 				vertical-align: top;
 			}
@@ -620,7 +627,7 @@
 	}
 
 	a.pull {
-		@media @desktop-lg {
+		@media @desktop-large {
 			display: none;
 		}
 
@@ -1574,14 +1581,14 @@
 	.image-wrap {
 		background-position: -10000%;
 
-		@media (max-width: 650px) {
+		@media @mobile {
 			max-width: 100%;
 		}
 
 		img {
 			max-width: 95%!important;
 
-			@media (max-width: 650px) {
+			@media @mobile {
 				max-width: 100%;
 			}
 		}
@@ -1687,7 +1694,7 @@
 				text-align: left;
 
 				&:last-child {
-					@media (max-width: 650px) {
+					@media @mobile {
 						display: none;
 					}
 				}
@@ -1714,7 +1721,7 @@
 		// Item Row
 
 		tr td {
-			@media (max-width: 650px) {
+			@media @mobile {
 				display: table;
 				width: 100%;
 				border-bottom: 0;
@@ -1727,7 +1734,7 @@
 			}
 
 			&:nth-child(2) {
-				@media (max-width: 650px) {
+				@media @mobile {
 					padding-left: 0;
 					padding-bottom: 20px;
 				}
@@ -1741,14 +1748,14 @@
 
 			&:nth-child(1) {
 				width: 25%;
-				@media (max-width: 650px) {
+				@media @mobile {
 					padding-bottom: 0;
 					width: 100%;
 				}
 			}
 
 			&:last-child {
-				@media (max-width: 650px) {
+				@media @mobile {
 					padding: 6px 20px 6px 0;
 					margin: 0 0 15px;
 				}
@@ -1756,7 +1763,7 @@
 		}
 
 		tr:last-child td:last-child {
-			@media (max-width: 650px) {
+			@media @mobile {
 				border-top: 0;
 				margin-top: 0;
 				padding-top: 0;
