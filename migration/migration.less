@@ -6,99 +6,99 @@
 // Template styling resets
 
 #migrated {
-    .contain {
-        padding: 0 0 80px;
+	.contain {
+		padding: 0 0 80px;
 
-        @media @mobile {
-            padding-bottom: 30px;
-        }
-    }
+		@media @mobile {
+			padding-bottom: 30px;
+		}
+	}
 
-    .bk-footer {
-        margin-top: 20px;
-    }
+	.bk-footer {
+		margin-top: 20px;
+	}
 
-    &.edit {
-        .bk-header,
-        [data-widget-type="feature"] {
-            @media @tablet-large {
-                width: ~"calc(100% - 200px)";
-            }
-        }
+	&.edit {
+		.bk-header,
+		[data-widget-type="feature"] {
+			@media @tablet-large {
+				width: ~"calc(100% - 200px)";
+			}
+		}
 
-        .bk-nav {
-            @media @tablet-large {
-                right: -350px;
-            }
+		.bk-nav {
+			@media @tablet-large {
+				right: -350px;
+			}
 
-            @media @desktop-large {
-                right: 130px;
-            }
-        }
+			@media @desktop-large {
+				right: 130px;
+			}
+		}
 
-        .extendednavigation a.pull {
-            @media @tablet-large {
-                left: -182px;
-            }
-        }
-    }
+		.extendednavigation a.pull {
+			@media @tablet-large {
+				left: -182px;
+			}
+		}
+	}
 
-    &.is-move-mode,
-    &.row-editing {
+	&.is-move-mode,
+	&.row-editing {
 
-        .bk-nav,
-        .bk-header {
-            display: none;
-        }
-    }
-    
-    // Hides the row overlay bars as the template is contained
-    .row-overlay:before,
-    .row-overlay:after {
-        display: none;
-    }
+		.bk-nav,
+		.bk-header {
+			display: none;
+		}
+	}
+	
+	// Hides the row overlay bars as the template is contained
+	.row-overlay:before,
+	.row-overlay:after {
+		display: none;
+	}
 }
 
 // Row improvments
 
 [id^="migrate"] .row--image-text-7a blockquote {
-    padding: 12px;
+	padding: 12px;
 }
 
 // Hides the caption for the logo section
 [class*="row--logos"] .widget.gallery .image-data {
-    display: none;
-    visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
 
 // Re-add the reset styles
 
 #migrated {
-    .empty-zone,
-    #page-zones__main:empty,
-    #page-zones__main > .widget:not([data-name="row"]),
-    [data-name="row"] .row:not(.row--width-no-padding) .row__container,
-    .bk-footer {
-        margin-left: auto;
-        margin-right: auto;
-        width: ~"calc(100% - 160px)";
+	.empty-zone,
+	#page-zones__main:empty,
+	#page-zones__main > .widget:not([data-name="row"]),
+	[data-name="row"] .row:not(.row--width-no-padding) .row__container,
+	.bk-footer {
+		margin-left: auto;
+		margin-right: auto;
+		width: ~"calc(100% - 160px)";
 
-        @media @mobile {
-            width: ~"calc(100% - 60px)";
-        }
-    }
+		@media @mobile {
+			width: ~"calc(100% - 60px)";
+		}
+	}
 
-    // Replaces main padding by moving this to the first widget in the zone
-    #page-zones__main > .widget:not([data-name="row"]):first-child {
-        padding-top: 80px;
+	// Replaces main padding by moving this to the first widget in the zone
+	#page-zones__main > .widget:not([data-name="row"]):first-child {
+		padding-top: 80px;
 
-        @media @mobile {
-            padding-top: 30px;
-        }
-    }
+		@media @mobile {
+			padding-top: 30px;
+		}
+	}
 
-    // Add spacing to the top of a widget when it follows a row
-    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
-        margin-top: 20px; // Widget margin bottom
-    }
+	// Add spacing to the top of a widget when it follows a row
+	#page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
+		margin-top: 20px; // Widget margin bottom
+	}
 }
