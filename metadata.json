@@ -141,7 +141,6 @@
         "font10": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "24px",
-            "letter-spacing": "20px",
             "font-weight": "700",
             "line-height": "34px",
             "color": "@color-swatch7",
