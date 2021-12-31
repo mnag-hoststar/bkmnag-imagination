@@ -1112,6 +1112,22 @@ a.contentgroup__link {
 	}
 }
 
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
+}
+
 // Embeds
 
 .widget.embed .embed-default,
@@ -1144,7 +1160,7 @@ a.contentgroup__link {
 		opacity: 1;
 		box-sizing: content-box;
 		margin: 0 auto;
-		@transition(opacity 0.3s ease);
+		@transition(opacity, 0.3s, ease);
 	}
 
 	&.language-selector--light,
