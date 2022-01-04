@@ -963,21 +963,35 @@ tr:last-child td {
 // Buttons
 
 button.btn,
+.widget.button button,
 .contactform button,
-.contactform button.btn, 
+.contactform button.btn,
+.signupform fieldset button,
+.signupform fieldset button.btn,
 .advancedcontactform button,
 .advancedcontactform button.btn,
-.widget.button button,
 .widget.profile form button,
-.widget.signupform fieldset button,
-.widget.blogsearch button,
-.blog-post-list .blog-post-more-link a,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.dropbox button,
+.blog-search-submit-button,
+.blog-list-footer .paginate-older,
+.ecom-productslist-products .productlist-search .btn,
 .widget.ecomproductslist .productlist-display-form .form-group button,
 .widget.ecomproduct .ecom-product .btn,
-.tweet a, .dropbox button, .paypalbuynow input[type=submit].widget, .btn, 
-.widget.feature .feature-bgimg .content button,
+.widget.ecomcheckout .checkout-order-button,
+.widget.ecombasket .ecombasket-pull,
 .widget.ecombasket .ecombasket-list-container ul li .ecombasket-item-info .ecombasket-remove-button,
-.contentgroup__link {
+.widget.ecombasket .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link,
+.widget.ecombasketsummary .basket-summary-continue-shopping,
+.widget.ecombasketsummary .basket-summary-submit,
+.widget.feature .feature-bgimg .content button,
+.widget.tweet a,
+.widget.socialicons span a,
+.widget.clicktocall a,
+.blog-post-list .blog-post-more-link a,
+.widget.ecomcategorieslist ul li a,
+.widget.yelpreview .review-body .review-link a,
+a.contentgroup__link {
 	padding: 0 15px;
 	border: 0;
 	border-radius: 0;
@@ -2932,12 +2946,21 @@ a.contentgroup__link {
 // Inputs
 
 input,
-.widget.contactform input,
-.widget.profile form fieldset input,
+textarea,
+.contactform input,
+.contactform textarea,
 .signupform fieldset input,
-.widget.blogsearch input,
+.signupform fieldset input.email,
+.advancedcontactform input,
+.advancedcontactform textarea,
+.widget.profile form fieldset input,
 .productlist-display-form input[type=search],
-textarea, .widget.contactform textarea,
+.blogsearch input.blog-search-input,
+.productlist-filter .productlist-search input,
+.widget input[type="text"],
+.widget input[type="email"],
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
 select {
 	font-family: @font-swatch5-font-family;
 	font-size: @font-swatch5-font-size;
