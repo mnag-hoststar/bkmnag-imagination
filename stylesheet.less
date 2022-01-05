@@ -970,6 +970,7 @@ button.btn,
 .signupform fieldset button.btn,
 .advancedcontactform button,
 .advancedcontactform button.btn,
+.userregistration fieldset .userregistrationbtn,
 .widget.profile form button,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.dropbox button,
@@ -2631,7 +2632,8 @@ a.contentgroup__link {
 		padding-bottom: 25px;
 	}
 
-	input, textarea {
+	input,
+	textarea {
 		.border-radius(6px);
 	}
 
@@ -2953,6 +2955,7 @@ textarea,
 .signupform fieldset input.email,
 .advancedcontactform input,
 .advancedcontactform textarea,
+.userregistration fieldset input,
 .widget.profile form fieldset input,
 .productlist-display-form input[type=search],
 .blogsearch input.blog-search-input,
@@ -3089,6 +3092,42 @@ span.ecom-product-vartitle {
 		label {
 			display: inline;
 			word-break: break-word;
+		}
+	}
+}
+
+// Registration Form
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
 		}
 	}
 }
