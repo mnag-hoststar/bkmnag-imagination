@@ -2577,6 +2577,21 @@ a.contentgroup__link {
 		color: lighten(@color-swatch5, 20%);
 		font-size: bkscale(@font-swatch5-font-size, 1.25);
 	}
+
+	.product-actions {
+		button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
+		}
+	}
 }
 
 .widget.ecomcategorieslist .product-category-items a,
