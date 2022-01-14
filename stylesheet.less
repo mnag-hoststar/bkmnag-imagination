@@ -148,10 +148,9 @@ h5 {
 
 // Normal Text
 
-.widget {
+.widget, .widget.in-editing {
 	p, span, small, pre, code,
-	table, th, td,
-	&.content {
+	table, th, td, .content {
 		color: @font-swatch5-color;
 	
 		.style--light & {
@@ -166,6 +165,12 @@ h5 {
 			color: @contrast--dark;
 		}
 	}
+}
+
+.widget .content,
+.widget.in-editing .content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
 }
 
 // Preformatted and Code Text
