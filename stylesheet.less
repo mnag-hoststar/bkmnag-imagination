@@ -558,15 +558,32 @@ tr:last-child td {
 // Gallery
 
 .widget.gallery {
-	ul li span.inner {
-		.title {
-			color: @color-swatch1;
-			font-weight: @font-swatch3-font-weight;
-			font-size: bkscale(@font-swatch4-font-size, 1.1);
+	ul li  {
+		@media @tablet {
+			width: 50%;
+			padding-bottom: 50%;
+		}
+
+		@media @mobile {
+			width: 100%;
+			padding-bottom: 100%;
+		}
+
+		.responsivecolumns & {
+			width: 100%;
+			padding-bottom: 100%;
 		}
 	
-		.description {
-			color: @color-swatch1;
+		span.inner {
+			.title {
+				color: @color-swatch1;
+				font-weight: @font-swatch3-font-weight;
+				font-size: bkscale(@font-swatch4-font-size, 1.1);
+			}
+		
+			.description {
+				color: @color-swatch1;
+			}
 		}
 	}
 	
@@ -1980,7 +1997,6 @@ a.contentgroup__link {
 		padding: 5px 10px;
 	}
 }
-
 
 // Blog
 
