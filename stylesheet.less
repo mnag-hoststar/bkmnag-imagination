@@ -2315,7 +2315,64 @@ a.contentgroup__link {
 	}
 }
 
-// Ecommerce
+// E-COMMERCE
+
+// Categories
+
+.widget.ecomcategorieslist {
+	ul.product-category-items {
+		list-style: none;
+		padding: 0 10px;
+		margin: 0 auto 1em;
+		display: flex;
+		max-width: 800px;
+		flex-wrap: wrap;
+
+		@media @mobile {
+			padding: 0;
+		}
+
+		.responsivecolumns & {
+			padding: 0;
+		}
+
+		li {
+			width: 100%/3;
+			padding: 5px 10px;
+
+			@media @tablet {
+				width: 100%/2;
+			}
+
+			@media @mobile {
+				width: 100%;
+				padding: 5px 0;
+			}
+
+			.responsivecolumns & {
+				width: 100%;
+				padding: 5px 0;
+			}
+			
+			a,
+			a span {
+				.style--light & {
+					color: @contrast--light;
+				}
+
+				.style--accent & {
+					color: @contrast--accent;
+				}
+
+				.style--dark & {
+					color: @contrast--dark;
+				}
+			}
+		}
+	}
+}
+
+// Product List
 
 .widget.ecomproductslist,
 .widget.ecomfeaturedproducts {
@@ -2594,21 +2651,6 @@ a.contentgroup__link {
 				float: none;
 			}
 		}
-	}
-}
-
-.widget.ecomcategorieslist .product-category-items a,
-.widget.ecomcategorieslist .product-category-items a span {
-	.style--light & {
-		color: @contrast--light;
-	}
-
-	.style--accent & {
-		color: @contrast--accent;
-	}
-
-	.style--dark & {
-		color: @contrast--dark;
 	}
 }
 
