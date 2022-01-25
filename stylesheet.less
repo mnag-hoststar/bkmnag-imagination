@@ -1038,66 +1038,6 @@ a.contentgroup__link {
 	}
 }
 
-.widget.paypalbuynow .widget.button.paypal, 
-.widget.dropbox button,
-.widget.tweet a {
-	color: @font-swatch7-color;
-	background-color: @font-swatch7-background-color;
-	text-transform: uppercase;
-	.transition(all, .5s, ease-out);
-
-	.style--light & {
-		background-color: @color--accent;
-		color: @contrast--accent;
-	}
-
-	.style--accent & {
-		background-color: @color--dark;
-		color: @contrast--dark;
-	}
-
-	.style--dark & {
-		background-color: @color--accent;
-		color: @contrast--accent;
-	}
-
-	&:hover {
-		background-color: @font-swatch7-background-color-hover;
-		.transition(all, 0.75s, ease);
-
-		.style--light & {
-			background-color: darken(@color--accent, 10%);
-		}
-
-		.style--accent & {
-			background-color: darken(@color--dark, 10%);
-		}
-
-		.style--dark & {
-			background-color: darken(@color--accent, 10%);
-		}
-	}
-}
-
-.widget.paypalbuynow .widget.button.paypal,
-.widget.paypalbuynow .widget.button.paypal:hover {
-	background-image: image('/images/ic-paypal.svg');
-}
-
-.widget.dropbox button,
-.widget.dropbox button:hover  {
-	background-image: image('/images/ic-dropbox.svg');
-}
-
-.widget.tweet a,
-.widget.tweet a:hover {
-	background-image: image('/images/ic-tweet.svg');
-}
-
-.widget.tweet a {
-	padding: 15px 40px 15px 60px;
-}
-
 a.contentgroup__link {
 	align-items: center;
 	display: inline-flex;
@@ -1129,6 +1069,27 @@ a.contentgroup__link {
 	.style--dark & {
 		color: @contrast--accent;
 	} 
+}
+
+// Image Buttons
+
+.widget.tweet a,
+.widget.dropbox button,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.filedownload .btn,
+.widget.clicktocall a {
+	&, &:hover, &:focus {
+		background-repeat: no-repeat;
+		background-position: 1em;
+		background-size: 1.5em;
+		padding-left: 3.5em;
+	}
+}
+
+.widget.clicktocall a {
+	&, &:hover, &:focus {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTg4MDkxNUI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTg4MDkxNkI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMkE4MzU2QjRCQjExRTI5RkMwOEFDNjgzRUY3MzVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1ODgwOTE0QjRENzExRTI5RkMwOEFDNjgzRUY3MzVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s2QrvwAAAPxJREFUeNpi/P//PwM1ARMDlQE2A7uAGOTsHWSZCPIyFHMC8cz/qMASSZ4ojOzCCUCchmafOyVeVsIiHwXE7OQa+BaLPC8Uk2XgdiD+icR/DMS2QPyG3EhhAeIFSBEyk9QIAadpNAFDJAP/ArE+pQaCcDOSoSepYSAIH0EydCuaHCMQ8wIxEykGigHxPSRDzwOxGlQuDIi/AfExIG4BYn8gFiBkIAjLAfFjJEM/AfFGIH7zHxMcAGJ1QgaCsDAQn/hPGDwCYhdiDIThRgIGNhPjZXSsAsQLockJGUxHVsdIYgELylmJQOwHxPxAfAGIa4D4C0wB46AvsQECDAB0BaRrDCyrSQAAAABJRU5ErkJggg==);
+	}
 }
 
 // Embeds
