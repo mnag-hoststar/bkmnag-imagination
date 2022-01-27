@@ -3080,6 +3080,19 @@ textarea,
 
 // Select
 
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @mobile {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+}
+
 select {
 	padding-right: 2.2em;
 	width: 100%;
