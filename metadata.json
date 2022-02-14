@@ -1,11 +1,11 @@
 {
-    "name":"Imagination",
-    "thumbnail":"thumbnail.png",
-    "screenshot":"imagination-screenshot.jpg",
-    "templateType":"standard",
-    "images":["/images/feature-bg.jpg"],
+    "name": "Imagination",
+    "thumbnail": "images/thumbnail.png",
+    "screenshot": "images/screenshot.jpg",
+    "templateType": "standard",
+    "images": ["/images/feature-bg.jpg"],
     "versionTenCompatible": 1,
-    "pageTypes":["home"],
+    "pageTypes": ["home"],
     "tags": {
     "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
     "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
