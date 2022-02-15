@@ -35,6 +35,27 @@
 	-o-transition: @transition;  
 }
 
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
+}
+
 // Main
 
 body {
@@ -2160,166 +2181,6 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	}
 }
 
-// Menu
-
-.widget.menusections {
-	a {
-		font-family: @font-swatch7-font-family;
-		font-size: @font-swatch7-font-size;
-		font-weight: @font-swatch7-font-weight;
-		line-height: @font-swatch7-line-height;
-		color:@font-swatch7-color;
-		letter-spacing: @font-swatch7-letter-spacing;
-		text-decoration: none;
-		text-transform: uppercase;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-
-	li {
-		background-color: @font-swatch7-background-color;
-		padding: 5px 20px;
-
-		.transition(all, .5s, ease-out);
-
-		&:hover {
-			background-color: @font-swatch7-background-color-hover;
-			.transition(all, 0.75s, ease);
-			cursor: pointer;
-		}
-	}
-	
-	ul li {
-		display: inline-block;
-		margin: 0 0.4em;
-	}
-}
-
-.menu {
-	.menu-item-image-wrap {
-		background-size: cover;
-		background-repeat: no-repeat;
-		height: 180px;
-		margin: 0.25em 0 0.75em;
-		background-position: center;
-
-		img {
-			display: none;
-		}
-	}
-
-	.menu-header {
-		margin: 2em 0 1.5em;
-		text-align: center;
-
-		h1 {
-			font-size: bkscale(@font-swatch1-font-size, 0.7);
-			line-height: bkscale(@font-swatch1-line-height, 0.7);
-			padding-bottom: 2px;
-		}
-	}
-
-	.menu-items li {
-		border-bottom: 1px solid darken(@color-swatch1, 10%);
-	}
-
-	.menu-subsection {
-		padding: 0;
-
-		.menu-subsection-header {
-			padding: 20px 0;
-
-			h2 {
-				color: @color-swatch4;
-			}
-		}
-	}
-
-	.menu-item-nutritional-title {
-		font-size: bkscale(@font-swatch5-font-size, 0.86);
-
-		&:before {
-			content: "\2014";
-			color: darken(@color-swatch1, 10%);
-			display: block;
-			padding-bottom: 8px;
-			padding-top: 8px;
-			line-height: 8px;
-		}
-	}
-
-	.menu-item-nutritional-prop  {
-		font-size: bkscale(@font-swatch5-font-size, 0.9);
-		line-height: @font-swatch5-line-height;
-	}
-
-	.menu-section-item-dietary-props .dietary-icon {
-		color: @color-swatch3;
-		font-size: bkscale(@font-swatch5-font-size, 1.12);
-	}
-
-	.menu-subsection-promoted,
-	.menu-items li.menu-item-promoted {
-		background-color: @color-swatch7;
-		border: 1px solid darken(@color-swatch1, 10%);
-		padding: 2em;
-		margin-top: 2em;
-
-		@media @mobile {
-			padding: 1em;
-		}
-
-		ol {
-			padding-bottom: 0;
-		}
-
-		.menu-subsection-header {
-			padding: 20px 0 12px;
-
-			h2 {
-				margin-bottom: 0;
-			}
-		}
-
-		.menu-item-price:after {
-			display: table-cell;
-			content: "\2605";
-			color: @color-swatch3;
-			border: solid 2px @color-swatch3;
-			font-size: bkscale(@font-swatch5-font-size, 0.86);
-			text-align: center;
-			width: 30px;
-		}
-	}
-
-	.menu-subsection-name {
-		color: @font-swatch2-color;
-		margin-bottom: 0.25em;
-	}
-
-	.menu-item-price {
-		margin: 10px 0;
-
-		p {
-			font-family: @font-swatch7-font-family;
-			font-size: bkscale(@font-swatch5-font-size, 0.86);
-			font-weight: @font-swatch7-font-weight;
-			line-height: @font-swatch7-line-height;
-			color:@font-swatch7-color;
-			letter-spacing: @font-swatch7-letter-spacing;
-			text-decoration: none;
-			text-transform: uppercase;
-			background-color: @font-swatch7-background-color;
-			padding: 9px;
-			text-align: center;
-			width: 80px;
-			display: table-cell;
-		}
-	}
-}
-
 // E-COMMERCE
 
 // Categories
@@ -3119,15 +2980,18 @@ textarea,
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @mobile {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 }
 
 select {
@@ -3162,6 +3026,7 @@ span.ecom-product-vartitle {
 	font-size: @font-swatch5-font-size;
 	font-weight: @font-swatch5-font-weight;
 	line-height: @font-swatch5-line-height;
+    word-break: break-word;
 
 	.style--light & {
 		color: @contrast--light;
