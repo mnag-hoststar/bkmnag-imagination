@@ -177,28 +177,26 @@ h5 {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font-swatch5-font-size !important;
-		line-height: @font-swatch5-line-height !important;
+.widget.content .wysihtml-editor-content,
+.widget.embed .embed-content,
+.widget.content.in-editing .wysihtml-editor-content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
+
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @font-swatch5-color;
 	
-		&, p, span, small, pre, code,
-		table, th, td {
+		.style--light & {
 			color: @font-swatch5-color;
-		
-			.style--light & {
-				color: @font-swatch5-color;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -294,7 +292,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -353,6 +351,7 @@ hr.line {
 table {
 	overflow: auto;
 	width: 100%;
+	max-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -923,7 +922,7 @@ tr:last-child td {
 			right: 80px;
 
 			&:before {
-				content: "\003c";
+				content: '\003c';
 			}
 
 			@media @mobile {
@@ -936,7 +935,7 @@ tr:last-child td {
 			right: 15px;
 
 			&:before {
-				content: "\003e";
+				content: '\003e';
 			}
 
 			@media @mobile {
@@ -956,18 +955,20 @@ button.button,
 .contactform button.btn,
 .advancedcontactform button,
 .advancedcontactform button.btn,
-.widget.tweet a,
-.widget.clicktocall a,
-.widget.dropbox button,
-.widget.filedownload button.btn,
-.widget.paypalbuynow .widget.button.paypal,
+.widget__paypal,
+.widget__tweet a.button.tweet__button,
+.widget__dropbox button.dropbox__button,
+.widget__clicktocall .phone-number-link,
+[data-name="filedownload"] .button,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
 form.blog-search-form .form-group button,
-.blog-post-more-link a {
+.blog-post-more-link a,
+.ecomproduct__product-actions button.button.icon.icon--add,
+.ecomproduct__product-actions a.button.icon.icon--basket {
 	padding: 0 15px;
 	border: 0;
 	border-radius: 0;
@@ -1076,11 +1077,12 @@ a.contentgroup__link {
 .widget.dropbox button span,
 .widget.filedownload button.btn {
 	&:before {
-		float: left;
-		padding-right: 0.5em;
+        position: relative;
+        top: 0.1em;
+		padding-right: 0.25em;
 		background-image: none;
 		font-family:'FontAwesome';
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 }
 
@@ -1098,7 +1100,7 @@ a.contentgroup__link {
 // Social Icons
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
 	margin: 2em 0 1em;
 
 	span {
@@ -1232,13 +1234,13 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 
 	.language-selector.language-selector--dropdown & {
 		&:before {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-line-height;
 		}
 
 		&:after {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-padding*2;
 		}
@@ -1369,7 +1371,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 		&:after {
 			.language-selector.language-selector--dropdown & {
 				position: absolute;
-				content: "\25be";
+				content: '\25be';
 				top: 50%;
 				right: 0;
 				margin-top: -(@language-line-height/4);
@@ -1796,13 +1798,13 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 					}
 					
 					> .text {
-						// Folder Arrow
+						word-break: break-word;
 
 						&:after {
 							border-width: 0;
 							position: absolute;
 							top: 10px;
-							content: "\25be";
+							content: '\25be';
 							margin-top: @font-swatch6-line-height/4;
 							width: auto;
 							background-color: transparent;
@@ -2382,6 +2384,10 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	margin-bottom: 30px;
 	padding: 10px;
 	overflow: auto;
+
+	a:hover {
+		text-decoration: none;
+	}
 	
 	@media @tablet {
 		width: 100%/2;
@@ -2406,6 +2412,13 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 .widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
 	background-position: center;
 	margin-bottom: 20px;
+}
+
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
 }
 
 // Info
@@ -2484,10 +2497,11 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 		font-size: bkscale(@font-swatch5-font-size, 1.25);
 	}
 
-	.product-actions {
+	.product-product {
 		button {
-			margin-bottom: 1em;
+			margin: 20px 0 0;
 			text-align: center;
+			min-width: 250px;
 		
 			@media @mobile {
 				width: 100%;
@@ -3024,19 +3038,152 @@ span.ecom-product-vartitle {
 
 // Radiobuttons, Checkboxes
 
-.contactform,
-.advancedcontactform {
-	label,
-	label.label--radio,
-	label.label--checkbox {
-		.label;
+.widget .form .option-list {
+	margin-top: 1em;
+	margin-bottom: 2em;
+
+	.option-item--radio,
+	.option-item--checkbox {
+		position: relative;
+		width: 100%;
+		margin-bottom: @font-swatch5-line-height / 2;
+		padding: 0;
+		min-height: @font-swatch5-line-height;
+	}
+}
+
+.widget .form .option-list,
+.widget .form-group[class*="form-group--terms"] {
+	input[type="radio"],
+	input[type="checkbox"] {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: floor(@font-swatch5-line-height*0.8+2) !important;
+		height: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		bottom: 0;
+
+		&:checked + label:after {
+			opacity: 1;
+		}
 	}
 
-	.option-list {
-		label {
-			display: inline;
-			word-break: break-word;
+	.label--radio,
+	.label--checkbox,
+	label[for*="input--terms"] {
+		display: block;
+		position: relative;
+		cursor: pointer;
+		padding-left: 2em;
+		margin-bottom: 0;
+		line-height: floor(@font-swatch5-line-height*0.8+2);
+		font-size: @font-swatch5-font-size;
+		word-break: break-word;
+		text-align: left;
+		text-transform: none;
+
+		span a.form__link {
+			font-family: @font-swatch5-font-family;
+			font-weight: @font-swatch5-font-weight;
+			font-size: @font-swatch5-font-size;
+			line-height: floor(@font-swatch5-line-height*0.8+2);
+			letter-spacing: @font-swatch5-letter-spacing;
 		}
+			
+		&:before,
+		&:after {
+			cursor: pointer;
+			display: block;
+			content: ' ';
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&:before {
+			min-width: 0;
+			height: floor(@font-swatch5-line-height*0.8);
+			width: floor(@font-swatch5-line-height*0.8);
+			background-color: @color-swatch1;
+			border: 1px solid @font-swatch7-background-color;
+
+			.style--light & {
+				border-color: @font-swatch7-background-color;
+			}
+
+			.style--accent & {
+				border-color: @color--dark;
+			}
+
+			.style--dark & {
+				border-color: @color--accent;
+			}
+		}
+
+		&:after {
+			opacity: 0;
+			width: floor(@font-swatch5-line-height*0.8);
+		}
+	}
+
+	.label--radio {
+		&:before {
+			border-radius: 50%;
+		}
+		
+		&:after {
+			border-radius: 50%;
+			background-color: @font-swatch7-background-color;
+			border: 1px solid @font-swatch7-background-color;
+			height: floor(@font-swatch5-line-height*0.8);
+			transform: scale(50%);
+
+			.style--light & {
+				background-color: @font-swatch7-background-color;
+				border: 1px solid @font-swatch7-background-color;
+			}
+
+			.style--accent & {
+				background-color: @color--dark;
+				border: 1px solid @color--dark;
+			}
+
+			.style--dark & {
+				background-color: @color--accent;
+				border: 1px solid @color--accent;
+			}
+		}
+	}
+
+	.label--checkbox,
+	label[for*="input--terms"] {
+		&:after {
+			margin-top: floor(@font-swatch5-line-height*-1.2/4);
+			height: floor(@font-swatch5-line-height*1.2);
+			border: 1px solid transparent;
+			box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
+			transform: scale(50%) rotate(45deg);
+
+			.style--light & {
+				box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
+			}
+
+			.style--accent & {
+				box-shadow: -6px -6px 0 0 inset @color--dark;
+			}
+
+			.style--dark & {
+				box-shadow: -6px -6px 0 0 inset @color--accent;
+			}
+		}
+	}
+	
+	label[for*="input--terms"] span a.form__link {
+		text-decoration: underline;
+		border: none;
 	}
 }
 
