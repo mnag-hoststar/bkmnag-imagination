@@ -21,23 +21,19 @@
 	&.edit {
 		.bk-header,
 		[data-widget-type="feature"] {
-			@media @tablet-large {
-				width: ~"calc(100% - 200px)";
+			@media @tablet {
+				width: calc(~"100% - 200px");
 			}
 		}
 
 		.bk-nav {
-			@media @tablet-large {
+			@media @tablet {
 				right: -350px;
-			}
-
-			@media @desktop-large {
-				right: 130px;
 			}
 		}
 
 		.extendednavigation a.pull {
-			@media @tablet-large {
+			@media @tablet {
 				left: -182px;
 			}
 		}
