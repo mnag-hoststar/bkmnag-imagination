@@ -1056,6 +1056,7 @@ form.blog-search-form .form-group button,
 	border-radius: 0;
 	min-width: 100px;
 	min-height: 50px;
+	height: auto !important;
 	background-color: @font-swatch7-background-color;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
@@ -1928,6 +1929,11 @@ a.contentgroup__link {
 				
 						@media @tablet {
 							display: none;
+						}
+								
+						a .text {
+							overflow: visible;
+							word-break: break-word;
 						}
 					}
 				}
