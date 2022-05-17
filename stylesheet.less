@@ -270,7 +270,8 @@ blockquote {
 		color: @contrast--dark;
 	}
 
-	&:before {
+	&:before,
+	&:after {
 		display: none;
 	}
 }
@@ -935,10 +936,12 @@ tr:last-child td {
 		.btn-play {
 			background-color: fade(@color-swatch1, 65%);
 			.border-radius(100px);
+			top: 50%;
+			left: 50%;
 			height: 75px;
 			width: 75px;
-			margin-left: 37px;
-			left: 50%;
+			margin-top: -37px;
+			margin-left: -37px;
 
 			@media @tablet {
 				left: 44.5%;
@@ -971,11 +974,8 @@ tr:last-child td {
 			bottom: inherit;
 			height: 50px;
 			width: 55px;
-			line-height: 100%;
 			background-color: fade(@color-swatch1, 65%);
-			font-family: @font-swatch7-font-family;
-			font-size: bkscale(@font-swatch3-font-size, 1.4);
-			font-weight: @font-swatch5-font-weight;
+			font-size: 0;
 			text-indent: 1000px;
 			.transition(all .5s ease);
 
@@ -986,12 +986,12 @@ tr:last-child td {
 
 			&:before {
 				display: block;
-				position: absolute;
-				top: 10px;
-				left: 20px;
 				width: 0;
 				height: 0;
 				text-indent: 0;
+				font-size: 28px;
+				line-height: 28px;
+				font-weight: bold;
 			}
 		}
 
@@ -1035,6 +1035,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1056,7 +1057,7 @@ form.blog-search-form .form-group button,
 	border-radius: 0;
 	min-width: 100px;
 	min-height: 50px;
-	height: auto !important;
+	height: auto;
 	background-color: @font-swatch7-background-color;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
@@ -3028,7 +3029,8 @@ select {
 	padding: 8px 10px 10px;
 	outline: none;
 	border-radius: 0;
-	height: 50px;
+	min-height: 50px;
+    height: auto !important;
 	.transition(ease, .5s, border);
 
 	.style--light & {
@@ -3082,8 +3084,9 @@ select {
 // Textareas
 
 textarea,
-.widget.contactform textarea {
-	height: 150px;
+.widget.contactform textarea,
+.widget.advancedcontactform textarea {
+	min-height: 150px;
 }
 
 // Select
