@@ -1925,11 +1925,16 @@ a.contentgroup__link {
 						position: relative;
 						margin: 1em 0;
 						padding: 10px 20px;
+						min-width: 200px;
+						max-width: 400px;
 						color: @color-swatch3;
 						.transition(all, 0.5s, ease);
 				
 						@media @tablet {
 							display: none;
+							position: static;
+							max-width: none;
+							min-width: auto;
 						}
 								
 						a .text {
