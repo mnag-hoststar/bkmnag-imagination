@@ -1612,15 +1612,6 @@ a.contentgroup__link {
 	@media @mobile {
 		padding-right: 90px;
 	}
-
-	.edit & {
-		margin: auto;
-		max-width: calc(~"100% - 200px");
-
-		@media @edit-tablet {
-			max-width: none;
-		}
-	}
 }
 
 .bk-nav {
@@ -1632,21 +1623,13 @@ a.contentgroup__link {
 	padding: 0;
 	width: 350px;
 	max-height: calc(~"100% - 50px");
-	margin: 25px 25px 90px !important;
+	margin: 25px !important;
 	border: 2px solid @color-swatch7;
 
 	.menu-active & {
 		top: 0;
 		right: 0;
 		.transition(border, 0.5s, ease);
-	}
-
-	.edit & {
-		margin-right: 120px !important;
-
-		@media @edit-tablet {
-			margin: 25px 25px 90px !important;
-		}
 	}
 
 	@media @tablet {
@@ -1969,15 +1952,6 @@ a.contentgroup__link {
 .widget.feature {
 	height: 100%;
 	position: fixed;
-
-	.edit & {
-		margin: auto;
-		max-width: calc(~"100% - 200px");
-
-		@media @edit-tablet {
-			max-width: none;
-		}
-	}
 
 	.feature-bgimg {
 		min-height: 100%;

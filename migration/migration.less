@@ -22,22 +22,31 @@
 	}
 
 	&.edit {
-		.bk-header,
-		[data-widget-type="feature"] {
-			@media @tablet {
-				width: calc(~"100% - 200px");
+		.bk-header {
+			max-width: calc(~"100% - 200px");
+			margin-left: auto;
+			margin-right: auto;
+		
+			@media @edit-tablet {
+				max-width: none;
+			}
+		}
+
+		.widget.feature {
+			max-width: calc(~"100% - 200px");
+			margin-left: auto;
+			margin-right: auto;
+	
+			@media @edit-tablet {
+				max-width: none;
 			}
 		}
 
 		.bk-nav {
-			@media @tablet {
-				right: -350px;
-			}
-		}
-
-		.extendednavigation a.pull {
-			@media @tablet {
-				left: -182px;
+			margin-right: 120px !important;
+	
+			@media @edit-tablet {
+				margin-right: 25px !important;
 			}
 		}
 	}
