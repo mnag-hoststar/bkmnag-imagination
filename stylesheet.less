@@ -857,6 +857,23 @@ tr:last-child td {
 .widget.responsiveslideshow {
 	margin-top: 2em;
     margin-bottom: 2em;
+
+	.slideshow-widget {
+		position: relative;
+		background-color: darken(@color-swatch1, 10%);
+
+		.style--light & {
+			background-color: darken(@color-swatch1, 10%);
+		}
+
+		.style--accent & {
+			background-color: darken(@color--accent, 10%);
+		}
+
+		.style--dark & {
+			background-color: lighten(@color--dark, 10%);
+		}
+	}
 	
 	.slideshow-widget-controls {
 		.dot {
@@ -987,12 +1004,13 @@ tr:last-child td {
 
 			&:before {
 				display: block;
-				width: 0;
-				height: 0;
-				text-indent: 0;
+				width: 55px;
+				height: 50px;
+				line-height: 46px;
 				font-size: 28px;
-				line-height: 28px;
+				text-indent: 0;
 				font-weight: bold;
+				text-align: center;
 			}
 		}
 
@@ -3157,6 +3175,12 @@ span.ecom-product-vartitle {
 			margin-right: 0;
 			margin-bottom: 1em;
 		}
+    
+        .responsivecolumns & {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 1em;
+        }
 	}
 }
 
