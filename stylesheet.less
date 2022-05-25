@@ -3,6 +3,7 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
 @edit-tablet: ~"only screen and (max-width: 930px)";
+@navigation-hide: ~"only screen and (max-width: 2000px)";
 
 // Mixins
 
@@ -1605,12 +1606,12 @@ a.contentgroup__link {
 	min-height: 100px;
 	background-color: fade(@color-swatch6, 50%);
 
-	@media @tablet {
-		padding: 24px 90px 24px 30px;
+	@media @navigation-hide {
+		padding: 24px 110px 24px 30px;
 	}
 
 	@media @mobile {
-		padding-right: 90px;
+		padding-right: 110px;
 	}
 }
 
@@ -1632,7 +1633,7 @@ a.contentgroup__link {
 		.transition(border, 0.5s, ease);
 	}
 
-	@media @tablet {
+	@media @navigation-hide {
 		overflow: hidden;
 		height: 50px;
 		min-height: 80px;
@@ -1669,7 +1670,7 @@ a.contentgroup__link {
 		border-top: 2px solid @color-swatch7;
 		text-align: center;
 
-		@media @tablet {
+		@media @navigation-hide {
 			opacity: 0;
 
 			.menu-active & {
@@ -1737,7 +1738,7 @@ a.contentgroup__link {
 		a.pull {
 			display: none;
 
-			@media @tablet {
+			@media @navigation-hide {
 				display: block;
 				position: absolute;
 				margin-top: -15px;
@@ -1774,7 +1775,7 @@ a.contentgroup__link {
 					top: 10px;
 				}
 
-				@media @tablet {
+				@media @navigation-hide {
 					right: 0;
 					height: 2px;
 					width: 35px;
@@ -1824,7 +1825,7 @@ a.contentgroup__link {
 			background-color: fade(@color-swatch6, 95%);
 			padding: 20px 30px;
 
-			@media @tablet {
+			@media @navigation-hide {
 				opacity: 0;
 				display: block;
 				border-bottom: none;
@@ -1913,7 +1914,7 @@ a.contentgroup__link {
 						color: @color-swatch3;
 						.transition(all, 0.5s, ease);
 				
-						@media @tablet {
+						@media @navigation-hide {
 							display: none;
 							position: static;
 							max-width: none;
@@ -1934,7 +1935,7 @@ a.contentgroup__link {
 					display: block;
 					max-width: none;
 	
-					@media @tablet {
+					@media @navigation-hide {
 						display: block;
 					}
 				}
