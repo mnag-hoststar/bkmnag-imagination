@@ -335,19 +335,20 @@ blockquote {
 
 hr.line,
 .content hr {
-	background-color: lighten(@color-swatch5, 75%);
+	background-color: @color-swatch5;
 	border: none;
+	height: 1px;
 
 	.style--light & {
-		background-color: lighten(@color-swatch5, 75%);
+		background-color: @color-swatch5;
 	}
 
 	.style--accent & {
-		background-color: darken(@color--accent, 10%);
+		background-color: @contrast--accent;
 	}
 
 	.style--dark & {
-		background-color: lighten(@color--dark, 10%);
+		background-color: @contrast--dark;
 	}
 }
 
